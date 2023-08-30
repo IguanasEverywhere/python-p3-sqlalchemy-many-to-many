@@ -13,8 +13,9 @@ Base = declarative_base(metadata=metadata)
 game_user = Table(
     'game_users',
     Base.metadata,
-    Column('game_id', ForeignKey('games.id'), primary_key=True),
-    Column('user_id', ForeignKey('users.id'), primary_key=True),
+    Column('id', Integer, primary_key=True),
+    Column('game_id', ForeignKey('games.id')),
+    Column('user_id', ForeignKey('users.id')),
     extend_existing=True,
 )
 
